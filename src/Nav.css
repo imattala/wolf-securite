@@ -1,36 +1,56 @@
-/* src/Nav.css */
+/* Nav Container */
 nav {
-    background-color: #2c3e50; /* Dark background color */
-    padding: 10px 20px; /* Padding around the nav */
-    margin-bottom: 30px; /* Space below the nav */
-  }
-  
+  background-color: #2c3e50; /* Dark blue-gray background */
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation List */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+/* Navigation Links */
+nav ul li a {
+  color: #ecf0f1; /* Light gray text */
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #e74c3c; /* Bright red on hover */
+  color: white; /* White text on hover */
+}
+
+nav ul li a.active {
+  background-color: #e74c3c; /* Bright red for active links */
+  color: white; /* White text on active link */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
   nav ul {
-    list-style-type: none; /* Remove default list styling */
-    display: flex; /* Use flexbox to align items in a row */
-    justify-content: center; /* Center align the items */
-    padding: 0; /* Remove padding from the list */
-    margin: 0; /* Remove margin */
+      flex-direction: column;
+      padding: 10px;
   }
-  
-  nav li {
-    margin: 0 20px; /* Add space between the list items */
+
+  nav ul li {
+      margin: 10px 0;
   }
-  
-  nav a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Text color */
-    font-size: 1.2em; /* Font size for the links */
-    font-weight: bold; /* Bold font weight */
-    transition: color 0.3s ease; /* Smooth transition for color change */
+
+  nav ul li a {
+      font-size: 1.5em;
   }
-  
-  nav a:hover {
-    color: #ecf0f1; /* Change color on hover */
-  }
-  
-  nav a.active {
-    color: #e74c3c; /* Color for the active page link */
-    text-decoration: underline; /* Underline the active page */
-  }
-  
+}

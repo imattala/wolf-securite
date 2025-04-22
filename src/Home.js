@@ -2,6 +2,9 @@
 import React from 'react';
 import './Home.css'; // Import the CSS file for styling
 
+import './Home.css'; // Import the CSS file for styling
+import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa'; // Importing email and phone icons
+
 const Home = () => {
   return (
     <div className="home-container">
@@ -36,8 +39,12 @@ const Home = () => {
 
       <footer className="home-footer">
         <h3>Contact Us</h3>
-        <p>Email: contact@xyzsecurity.com</p>
-        <p>Phone: +123-456-7890</p>
+        <p>
+          <FaEnvelope /> Email: contact@xyzsecurity.com
+        </p>
+        <p>
+          <FaPhoneAlt /> Phone: +123-456-7890
+        </p>
       </footer>
     </div>
   );

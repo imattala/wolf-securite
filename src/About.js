@@ -2,6 +2,11 @@
 import React from 'react';
 import './About.css'; // Import the CSS file for styling
 
+// 📸 Import your images here:
+import johnPhoto from './assets/member1.jpg';
+import janePhoto from './assets/member2.jpg';
+import michaelPhoto from './assets/member2.jpg';
+
 const About = () => {
   return (
     <div className="about-container">
@@ -14,7 +19,7 @@ const About = () => {
         <h2>Our Mission</h2>
         <p>
           At XYZ Security, our mission is simple: to offer trusted, professional security services tailored to your
-          needs. We aim to provide peace of mind to businesses, ensuring a safe environment for both employees and
+          needs. We aim to provide peacee of mind to businesses, ensuring a safe environment for both employees and
           customers. Our security guards are highly trained and dedicated to maintaining safety at all times.
         </p>
 
@@ -28,19 +33,27 @@ const About = () => {
         <h2>Meet the Team</h2>
         <div className="team-members">
           <div className="team-member">
-            <h3>John Doe</h3>
+            {/* 📸 Add photo for John Doe */}
+            <img src={johnPhoto} alt="John Doe" className="team-photo" />
+            <h3>Faical ATTALA</h3>
             <p>Founder & CEO</p>
-            <p>John founded XYZ Security with the goal of providing top-quality security services for businesses. With over 20 years of experience in the security industry, John leads the company with a strong vision and dedication to excellence.</p>
+            <p>Faical founded XYZ Security with the goal of providing top-quality security services for businesses. With over 20 years of experience in the security industry, John leads the company with a strong vision and dedication to excellence.</p>
           </div>
+
           <div className="team-member">
-            <h3>Jane Smith</h3>
+            {/* 📸 Add photo for Jane Smith */}
+            <img src={janePhoto} alt="Jane Smith" className="team-photo" />
+            <h3>Ibrahim ATTALA</h3>
             <p>Operations Manager</p>
-            <p>Jane ensures that our security operations run smoothly and efficiently, overseeing the day-to-day activities of our security personnel and coordinating with clients to meet their needs.</p>
+            <p>Ibrahim ensures that our security operations run smoothly and efficiently, overseeing the day-to-day activities of our security personnel and coordinating with clients to meet their needs.</p>
           </div>
+
           <div className="team-member">
-            <h3>Michael Brown</h3>
+            {/* 📸 Add photo for Michael Brown */}
+            <img src={michaelPhoto} alt="Michael Brown" className="team-photo" />
+            <h3>Amin BAHMANI</h3>
             <p>Security Expert</p>
-            <p>With a background in law enforcement and security management, Michael is an expert in assessing risks and creating security strategies tailored to the unique needs of each client.</p>
+            <p>With a background in law enforcement and security management, Amin is an expert in assessing risks and creating security strategies tailored to the unique needs of each client.</p>
           </div>
         </div>
       </section>
