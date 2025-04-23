@@ -3,8 +3,8 @@
   font-family: Arial, sans-serif;
   background-color: #ecf0f1; /* Light gray background for the home page */
   color: #2c3e50; /* Dark blue-gray text */
-  padding: 30px;
-  margin-top: 30px;
+  padding: 50px;
+
 }
 
 /* Header */
@@ -119,3 +119,19 @@
 .home-footer p a:hover {
   text-decoration: underline; /* Underline on hover */
 }
+
+@media screen and (max-width: 768px) {
+  .service-cards {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .service-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 10px 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+

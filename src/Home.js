@@ -1,8 +1,6 @@
 // src/Home.js
 import React from 'react';
 import './Home.css'; // Import the CSS file for styling
-
-import './Home.css'; // Import the CSS file for styling
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa'; // Importing email and phone icons
 
 const Home = () => {
