@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Route, Routes, NavLink, Link } from 'react-router-dom'; // Add Link here
+import { HashRouter as Router, Route, Routes, NavLink, Link } from 'react-router-dom'; // Add Link here
 import Home from './Home';
 import About from './About';
 import Services from './Services';
