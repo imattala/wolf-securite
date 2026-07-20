@@ -1,36 +1,54 @@
 import React from 'react';
-import './Contact.css'; // Import the CSS file for styling
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa'; // Import the icons
+import './Contact.css';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
+  const address = '14 Place Claudel, 78180 Montigny-le-Bretonneux';
+
   return (
-    <div className="contact-container">
-      <header className="contact-header">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you! Get in touch with us for more information.</p>
+    <div className="contact-page">
+      <header className="page-hero">
+        <div className="container">
+          <span className="section-eyebrow hero-eyebrow">Wolf Sécurité</span>
+          <h1>Contactez-nous</h1>
+          <p>Une question, un projet ? Notre équipe vous répond rapidement.</p>
+        </div>
       </header>
 
-      <section className="contact-content">
-        <div className="contact-details">
-          <h2>Get in Touch</h2>
-          <p>If you have any questions or need more information, feel free to reach out to us.</p>
-          <ul>
-            <li>
-              <FaEnvelope /> <strong>Email:</strong> info@xyzsecurity.com
-            </li>
-            <li>
-              <FaPhoneAlt /> <strong>Phone:</strong> +1 (123) 456-7890
-            </li>
-            <li>
-              <FaMapMarkerAlt /> <strong>Address:</strong> 123 Security St, City, Country
-            </li>
-          </ul>
+      <section className="contact-section">
+        <div className="container">
+          <div className="contact-grid">
+            <a className="contact-card" href="mailto:hamelwolfsecurite@gmail.com">
+              <div className="contact-icon"><FaEnvelope /></div>
+              <h3>Email</h3>
+              <p>hamelwolfsecurite@gmail.com</p>
+            </a>
+
+            <a className="contact-card" href="tel:+33784707152">
+              <div className="contact-icon"><FaPhoneAlt /></div>
+              <h3>Téléphone</h3>
+              <p>+33 7 84 70 71 52</p>
+            </a>
+
+            <a
+              className="contact-card"
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="contact-icon"><FaMapMarkerAlt /></div>
+              <h3>Adresse</h3>
+              <p>{address}</p>
+            </a>
+
+            <div className="contact-card contact-card-static">
+              <div className="contact-icon"><FaClock /></div>
+              <h3>Disponibilité</h3>
+              <p>24h/24 et 7j/7</p>
+            </div>
+          </div>
         </div>
       </section>
-
-      <footer className="contact-footer">
-        <p>Looking forward to hearing from you!</p>
-      </footer>
     </div>
   );
 };

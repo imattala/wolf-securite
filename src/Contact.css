@@ -1,203 +1,60 @@
-/* Contact Page Layout */
-.contact-container {
-  font-family: Arial, sans-serif;
-  background-color: #ecf0f1; /* Light gray background for the entire page */
-  color: #2c3e50; /* Dark blue-gray text */
-  padding: 50px 20px;
-  margin: 0;
-  min-height: 100vh; /* Ensure the container takes full height */
+.contact-section {
+  padding: 80px 0 100px;
 }
 
-/* Contact Header */
-.contact-header {
-  background-color: #2c3e50; /* Dark blue-gray background */
-  color: white;
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+.contact-card {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 36px 26px;
   text-align: center;
-  padding: 40px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: block;
 }
 
-.contact-header h1 {
-  font-size: 3.5em;
-  margin-bottom: 10px;
+.contact-card:not(.contact-card-static):hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
 }
 
-.contact-header p {
-  font-size: 1.2em;
-  font-weight: 300;
-}
-
-.contact-content {
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--navy-900);
+  color: var(--gold-500);
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 60px;
-  padding: 0 15px; /* prevents horizontal overflow on small screens */
+  font-size: 1.5em;
+  margin: 0 auto 20px;
 }
 
-.contact-details {
-  background-color: #ffffff;
-  padding: 40px 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px;
-  box-sizing: border-box;
-  text-align: center; /* ✅ This centers the text */
-}
-
-
-.contact-details h2 {
-  font-size: 2.5em;
-  color: #2c3e50; /* Dark blue-gray for section titles */
-  margin-bottom: 20px;
-}
-
-.contact-details p {
-  font-size: 1.2em;
-  color: #7f8c8d; /* Soft gray text for descriptions */
-  margin-bottom: 20px;
-}
-
-.contact-details ul {
-  list-style: none;
-  padding: 0;
-}
-
-.contact-details ul li {
-  justify-content: center; 
-  font-size: 1.1em;
-  color: #2c3e50;
+.contact-card h3 {
+  font-size: 1.15em;
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
 }
 
-
-.contact-details ul li strong {
-  color: #e74c3c; /* Bright red for labels */
+.contact-card p {
+  color: var(--text-muted);
+  line-height: 1.5;
+  word-break: break-word;
 }
 
-/* Contact Footer */
-.contact-footer {
-  background-color: #2c3e50; /* Dark blue-gray background */
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  border-radius: 10px;
-  margin-top: 60px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.contact-card-static {
+  cursor: default;
 }
 
-.contact-footer p {
-  font-size: 1.2em;
-  margin: 5px 0;
-}
-
-/* Responsive Design for Mobile */
 @media (max-width: 768px) {
-  .contact-container {
-    padding: 20px;
-  }
-
-  .contact-header h1 {
-    font-size: 2.5em;
-  }
-
-  .contact-details {
-    padding: 30px 15px;
-  }
-
-  .contact-details h2 {
-    font-size: 2em;
-  }
-
-  .contact-details p {
-    font-size: 1.1em;
-  }
-
-  .contact-footer p {
-    font-size: 1.1em;
-  }
-}
-
-
-/* Contact Details Styling */
-.contact-details ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.contact-details li {
-  font-size: 1.1em;
-  margin: 10px 0;
-}
-
-/* Icon Styling */
-.contact-details svg {
-  margin-right: 10px; /* Add space between icon and text */
-  font-size: 1.4em; /* Make the icon larger */
-  vertical-align: middle; /* Vertically align the icon */
-}
-
-/* Footer Styling */
-.contact-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #2c3e50;
-  color: white;
-}
-
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-  .contact-container {
-    padding: 20px 10px;
-  }
-
-  .contact-header {
-    padding: 30px 15px;
-  }
-
-  .contact-header h1 {
-    font-size: 2.2em;
-  }
-
-  .contact-header p {
-    font-size: 1em;
-  }
-
-  .contact-details {
-    padding: 25px 15px;
-    margin: 0 5%;
-  }
-
-  .contact-details h2 {
-    font-size: 1.8em;
-  }
-
-  .contact-details p {
-    font-size: 1em;
-  }
-
-  .contact-details ul li {
-    font-size: 1em;
-  }
-
-  .contact-footer {
-    padding: 20px 15px;
-    margin-top: 40px;
-  }
-
-  .contact-footer p {
-    font-size: 1em;
-  }
-
-  .contact-details svg {
-    font-size: 1.2em;
+  .contact-section {
+    padding: 60px 0 70px;
   }
 }

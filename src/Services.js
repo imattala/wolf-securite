@@ -1,77 +1,95 @@
 // src/Services.js
 import React from 'react';
-import './Services.css'; // Import the CSS file for styling
+import { Link } from 'react-router-dom';
+import './Services.css';
+import {
+  FaHardHat,
+  FaCalendarAlt,
+  FaBuilding,
+  FaCar,
+  FaBell,
+  FaClipboardCheck,
+  FaVideo,
+} from 'react-icons/fa';
+
+const services = [
+  {
+    icon: <FaHardHat />,
+    title: 'Protection de chantiers',
+    text: "Nous assurons la sécurité complète de vos chantiers grâce à des agents qualifiés et des dispositifs de surveillance adaptés, pour prévenir le vol, le vandalisme et tout incident.",
+  },
+  {
+    icon: <FaCalendarAlt />,
+    title: "Sécurisation d'événements",
+    text: "Concerts, salons ou conférences : nos équipes professionnelles et nos dispositifs de contrôle garantissent la sécurité de vos invités et de vos installations.",
+  },
+  {
+    icon: <FaBuilding />,
+    title: 'Protection des bureaux et entrepôts',
+    text: "Des agents formés et des systèmes de surveillance performants pour prévenir les intrusions, vols et incidents dans vos locaux professionnels.",
+  },
+  {
+    icon: <FaCar />,
+    title: 'Rondes de surveillance',
+    text: "Nos rondes mobiles couvrent de grandes surfaces avec des passages aléatoires et une surveillance régulière, pour dissuader le vol et le vandalisme.",
+  },
+  {
+    icon: <FaBell />,
+    title: 'Télésurveillance 24h/24',
+    text: "Votre site est surveillé en continu et toute alerte est traitée immédiatement par notre équipe de sécurité.",
+  },
+  {
+    icon: <FaClipboardCheck />,
+    title: 'Évaluation des risques',
+    text: "Un audit complet des vulnérabilités de votre site, suivi de recommandations concrètes pour renforcer votre dispositif de sécurité.",
+  },
+  {
+    icon: <FaVideo />,
+    title: 'Systèmes de vidéosurveillance',
+    text: "Installation et maintenance de systèmes de vidéosurveillance avancés pour une protection continue de vos locaux.",
+  },
+];
 
 const Services = () => {
   return (
-    <div className="services-container">
-      <header className="services-header">
-        <h1>Our Security Services</h1>
-        <p>Professional security solutions tailored to your needs.</p>
+    <div className="services-page">
+      <header className="page-hero">
+        <div className="container">
+          <span className="section-eyebrow hero-eyebrow">Wolf Sécurité</span>
+          <h1>Nos services de sécurité</h1>
+          <p>Des solutions de sécurité professionnelles, adaptées à vos besoins.</p>
+        </div>
       </header>
 
-      <section className="services-content">
-        <h2>Our Expertise</h2>
-        <p>
-          At XYZ Security, we offer a range of security services designed to keep your property, people, and assets safe.
-          Whether you need security for a shopping mall, warehouse, or private property, our team is ready to provide the
-          highest level of service.
-        </p>
-
-        <div className="service-cards">
-          <div className="service-card">
-            <h3>On-Site Security Guards</h3>
-            <p>
-              Our trained security guards are available for on-site services, providing a visible and effective deterrent to
-              criminal activity, ensuring the safety of your staff, customers, and assets.
+      <section className="services-section">
+        <div className="container">
+          <div className="container narrow">
+            <span className="section-eyebrow">Notre expertise</span>
+            <h2>Une protection complète, sur tous les fronts</h2>
+            <p className="section-intro">
+              Chez Wolf Sécurité, nous proposons une gamme complète de services pour assurer la sécurité de vos biens,
+              de vos équipes et de vos visiteurs. Que ce soit pour un chantier, un entrepôt ou un événement, notre
+              équipe est prête à offrir le plus haut niveau de service.
             </p>
           </div>
 
-          <div className="service-card">
-            <h3>Mobile Patrols</h3>
-            <p>
-              Our mobile patrols offer security for larger areas, providing random checks and regular surveillance at your
-              premises. This service helps to prevent theft, vandalism, and other security threats.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>Event Security</h3>
-            <p>
-              Ensure your event is safe and secure with our experienced event security personnel. We manage crowd control,
-              monitor entrances, and ensure the safety of your attendees.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>24/7 Alarm Monitoring</h3>
-            <p>
-              With our 24/7 alarm monitoring service, we ensure that your property is constantly monitored, and any alerts are
-              promptly responded to by our security team.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>Risk Assessment</h3>
-            <p>
-              We offer professional security risk assessments to evaluate your property's vulnerabilities. Based on our findings,
-              we provide customized recommendations to improve your security systems.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>Surveillance Systems</h3>
-            <p>
-              Our team can help you install and maintain advanced CCTV systems that provide continuous surveillance of your
-              property to ensure round-the-clock security.
-            </p>
+          <div className="service-cards">
+            {services.map((service) => (
+              <div className="service-card" key={service.title}>
+                <div className="service-icon">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <footer className="services-footer">
-        <p>Interested in our services? <a href="/contact">Contact us</a> to discuss your security needs.</p>
-      </footer>
+      <section className="services-cta">
+        <div className="container">
+          <p>Intéressé par nos services ? <Link to="/contact">Contactez-nous</Link> pour discuter de vos besoins en sécurité.</p>
+        </div>
+      </section>
     </div>
   );
 };

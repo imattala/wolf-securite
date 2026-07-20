@@ -1,49 +1,95 @@
 // src/Home.js
 import React from 'react';
-import './Home.css'; // Import the CSS file for styling
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa'; // Importing email and phone icons
+import { Link } from 'react-router-dom';
+import './Home.css';
+import {
+  FaHardHat,
+  FaCalendarAlt,
+  FaBuilding,
+  FaClock,
+  FaUserShield,
+  FaBolt,
+  FaArrowRight,
+} from 'react-icons/fa';
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <header className="home-header">
-        <h1>Welcome to XYZ Security Services</h1>
-        <p>Your trusted security partner for supermarkets, malls, and more.</p>
+    <div className="home-page">
+      <header className="hero">
+        <div className="hero-overlay" />
+        <div className="container hero-content">
+          <span className="section-eyebrow hero-eyebrow">Sécurité privée &bull; Île-de-France</span>
+          <h1>Votre partenaire de confiance en sécurité</h1>
+          <p>
+            Protection sur mesure pour chantiers, événements, bureaux et entrepôts.
+            Nos agents qualifiés veillent sur vos biens 24h/24 et 7j/7.
+          </p>
+          <div className="hero-actions">
+            <Link to="/contact" className="btn btn-primary">Demander un devis</Link>
+            <Link to="/services" className="btn btn-outline">Découvrir nos services</Link>
+          </div>
+        </div>
       </header>
 
-      <section className="home-content">
-        <h2>About Us</h2>
-        <p>
-          We provide professional security guard services to ensure the safety and protection of your business. Our
-          experienced security team is dedicated to offering top-notch service in a variety of environments, including
-          retail stores, malls, and more.
-        </p>
-
-        <div className="service-cards">
-          <div className="service-card">
-            <h3>Supermarket Security</h3>
-            <p>Ensure the safety of your customers and employees with our supermarket security services.</p>
+      <section className="badges">
+        <div className="container badges-grid">
+          <div className="badge-item">
+            <FaClock />
+            <span>Disponible 24h/24 &amp; 7j/7</span>
           </div>
-          <div className="service-card">
-            <h3>Mall Security</h3>
-            <p>Our guards are trained to handle high-traffic areas and provide a secure environment in shopping malls.</p>
+          <div className="badge-item">
+            <FaUserShield />
+            <span>Agents formés &amp; qualifiés</span>
           </div>
-          <div className="service-card">
-            <h3>Event Security</h3>
-            <p>We offer security services for special events and gatherings, ensuring a safe atmosphere for all attendees.</p>
+          <div className="badge-item">
+            <FaBolt />
+            <span>Intervention rapide</span>
           </div>
         </div>
       </section>
 
-      <footer className="home-footer">
-        <h3>Contact Us</h3>
-        <p>
-          <FaEnvelope /> Email: contact@xyzsecurity.com
-        </p>
-        <p>
-          <FaPhoneAlt /> Phone: +123-456-7890
-        </p>
-      </footer>
+      <section className="home-content">
+        <div className="container">
+          <span className="section-eyebrow">Nos domaines d'expertise</span>
+          <h2>Une protection adaptée à chaque environnement</h2>
+          <p className="section-intro">
+            Protection sur mesure pour chantiers, événements, bureaux et entrepôts.
+            Nos agents qualifiés veillent sur vos biens 24h/24 et 7j/7.
+          </p>
+
+          <div className="service-cards">
+            <div className="service-card">
+              <div className="service-icon"><FaHardHat /></div>
+              <h3>Protection de chantiers</h3>
+              <p>Nous assurons la sécurité complète de vos chantiers grâce à des agents qualifiés et des dispositifs de surveillance adaptés. Notre objectif est de prévenir le vol, le vandalisme et tout incident, pour que vos projets avancent en toute sérénité.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon"><FaCalendarAlt /></div>
+              <h3>Sécurisation d'événements</h3>
+              <p>Nous garantissons la sécurité de vos événements en mettant en place des équipes professionnelles et des dispositifs de contrôle adaptés. Qu'il s'agisse de concerts, salons ou conférences, nous veillons à ce que vos invités et vos installations soient protégés, pour un événement sûr et réussi.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon"><FaBuilding /></div>
+              <h3>Protection des bureaux et entrepôts</h3>
+              <p>Nous assurons la sécurité de vos locaux professionnels et entrepôts grâce à des agents formés et des systèmes de surveillance performants. Notre mission est de prévenir les intrusions, vols et incidents, afin que vos activités se déroulent en toute tranquillité.</p>
+            </div>
+          </div>
+
+          <div className="services-more">
+            <Link to="/services" className="link-arrow">
+              Voir tous nos services <FaArrowRight />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-banner">
+        <div className="container cta-content">
+          <h2>Besoin d'une solution de sécurité fiable ?</h2>
+          <p>Contactez notre équipe pour une évaluation gratuite de vos besoins.</p>
+          <Link to="/contact" className="btn btn-primary">Nous contacter</Link>
+        </div>
+      </section>
     </div>
   );
 };

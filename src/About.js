@@ -1,66 +1,109 @@
 // src/About.js
 import React from 'react';
-import './About.css'; // Import the CSS file for styling
+import { Link } from 'react-router-dom';
+import './About.css';
+import { FaAward, FaHandshake, FaShieldAlt } from 'react-icons/fa';
 
-// 📸 Import your images here:
 import johnPhoto from './assets/member1.jpg';
 import janePhoto from './assets/member2.jpg';
-import michaelPhoto from './assets/member2.jpg';
+import michaelPhoto from './assets/member3.jpg';
+
+const values = [
+  {
+    icon: <FaAward />,
+    title: 'Professionnalisme',
+    text: "Nous sommes fiers de fournir des agents de sécurité hautement formés et fiables.",
+  },
+  {
+    icon: <FaHandshake />,
+    title: 'Intégrité',
+    text: "Nous agissons avec transparence et honnêteté, pour construire une relation de confiance durable avec nos clients.",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: 'Responsabilité',
+    text: "Notre équipe prend sa mission de protection très au sérieux : votre sécurité est notre priorité absolue.",
+  },
+];
+
+const team = [
+  {
+    photo: johnPhoto,
+    name: 'Faical ATTALA',
+    role: 'Fondateur & Directeur Général',
+    bio: "Faical a fondé Wolf Sécurité avec l'ambition d'offrir des services de sécurité de premier ordre aux entreprises. Fort de plus de 20 ans d'expérience dans le secteur, il dirige l'entreprise avec une vision forte et une exigence constante d'excellence.",
+  },
+  {
+    photo: janePhoto,
+    name: 'Ibrahim ATTALA',
+    role: 'Responsable des Opérations',
+    bio: "Ibrahim veille au bon déroulement des opérations de sécurité au quotidien, supervise les équipes sur le terrain et coordonne les échanges avec les clients pour répondre au mieux à leurs besoins.",
+  },
+  {
+    photo: michaelPhoto,
+    name: 'Amin BAHMANI',
+    role: 'Expert en Sécurité',
+    bio: "Fort d'une expérience dans les forces de l'ordre et la gestion de la sécurité, Amin est spécialiste de l'évaluation des risques et conçoit des stratégies de sécurité adaptées aux besoins spécifiques de chaque client.",
+  },
+];
 
 const About = () => {
   return (
-    <div className="about-container">
-      <header className="about-header">
-        <h1>About XYZ Security Services</h1>
-        <p>Providing top-tier security solutions for your business, people, and assets.</p>
+    <div className="about-page">
+      <header className="page-hero">
+        <div className="container">
+          <span className="section-eyebrow hero-eyebrow">Wolf Sécurité</span>
+          <h1>À propos de nous</h1>
+          <p>Fournir des solutions de sécurité de premier ordre pour votre entreprise, vos collaborateurs et vos biens.</p>
+        </div>
       </header>
 
-      <section className="about-content">
-        <h2>Our Mission</h2>
-        <p>
-          At XYZ Security, our mission is simple: to offer trusted, professional security services tailored to your
-          needs. We aim to provide peacee of mind to businesses, ensuring a safe environment for both employees and
-          customers. Our security guards are highly trained and dedicated to maintaining safety at all times.
-        </p>
+      <section className="about-section">
+        <div className="container narrow">
+          <span className="section-eyebrow">Notre mission</span>
+          <h2>Une tranquillité d'esprit, à chaque instant</h2>
+          <p>Chez Wolf Sécurité, notre mission est simple : offrir des services de sécurité fiables et professionnels, adaptés à vos besoins. Nous visons à assurer la tranquillité d'esprit des entreprises, en garantissant un environnement sûr pour vos collaborateurs et vos clients. Nos agents de sécurité sont hautement qualifiés et dévoués à maintenir la sécurité en toutes circonstances.</p>
+        </div>
+      </section>
 
-        <h2>Our Values</h2>
-        <ul>
-          <li>Professionalism: We pride ourselves on providing highly trained, reliable security staff.</li>
-          <li>Integrity: We operate with transparency and honesty, ensuring trust with our clients.</li>
-          <li>Responsibility: Our team takes its duty to protect very seriously, ensuring your safety comes first.</li>
-        </ul>
-
-        <h2>Meet the Team</h2>
-        <div className="team-members">
-          <div className="team-member">
-            {/* 📸 Add photo for John Doe */}
-            <img src={johnPhoto} alt="John Doe" className="team-photo" />
-            <h3>Faical ATTALA</h3>
-            <p>Founder & CEO</p>
-            <p>Faical founded XYZ Security with the goal of providing top-quality security services for businesses. With over 20 years of experience in the security industry, John leads the company with a strong vision and dedication to excellence.</p>
-          </div>
-
-          <div className="team-member">
-            {/* 📸 Add photo for Jane Smith */}
-            <img src={janePhoto} alt="Jane Smith" className="team-photo" />
-            <h3>Ibrahim ATTALA</h3>
-            <p>Operations Manager</p>
-            <p>Ibrahim ensures that our security operations run smoothly and efficiently, overseeing the day-to-day activities of our security personnel and coordinating with clients to meet their needs.</p>
-          </div>
-
-          <div className="team-member">
-            {/* 📸 Add photo for Michael Brown */}
-            <img src={michaelPhoto} alt="Michael Brown" className="team-photo" />
-            <h3>Amin BAHMANI</h3>
-            <p>Security Expert</p>
-            <p>With a background in law enforcement and security management, Amin is an expert in assessing risks and creating security strategies tailored to the unique needs of each client.</p>
+      <section className="values-section">
+        <div className="container">
+          <span className="section-eyebrow">Nos valeurs</span>
+          <h2>Ce qui nous définit</h2>
+          <div className="values-grid">
+            {values.map((value) => (
+              <div className="value-card" key={value.title}>
+                <div className="value-icon">{value.icon}</div>
+                <h3>{value.title}</h3>
+                <p>{value.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <footer className="about-footer">
-        <p>Want to learn more? <a href="/contact">Contact us</a> for more information.</p>
-      </footer>
+      <section className="team-section">
+        <div className="container">
+          <span className="section-eyebrow">L'équipe</span>
+          <h2>Rencontrez notre équipe</h2>
+          <div className="team-members">
+            {team.map((member) => (
+              <div className="team-member" key={member.name}>
+                <img src={member.photo} alt={member.name} className="team-photo" />
+                <h3>{member.name}</h3>
+                <p className="team-role">{member.role}</p>
+                <p>{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="about-cta">
+        <div className="container">
+          <p>Envie d'en savoir plus ? <Link to="/contact">Contactez-nous</Link> pour plus d'informations.</p>
+        </div>
+      </section>
     </div>
   );
 };

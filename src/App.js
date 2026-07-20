@@ -1,10 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { HashRouter as Router, Route, Routes, NavLink, Link } from 'react-router-dom'; // Add Link here
+import { HashRouter as Router, Route, Routes, NavLink, Link, useLocation } from 'react-router-dom';
+import { FaShieldAlt, FaBars, FaTimes } from 'react-icons/fa';
 import Home from './Home';
 import About from './About';
 import Services from './Services';
 import Contact from './Contact';
+import Footer from './Footer';
 import './Nav.css';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,41 +38,53 @@ const App = () => {
     };
   }, []);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <Router>
-      <div>
+      <ScrollToTop />
+      <div className="site">
         <nav className="navbar" ref={navRef}>
           <div className="nav-container">
-            {/* Wrap the logo with a Link component to navigate to the home page */}
-            <Link to="/" onClick={() => setMenuOpen(false)} className="logo">
-              XYZ
+            <Link to="/" onClick={closeMenu} className="logo">
+              <FaShieldAlt className="logo-icon" />
+              Wolf Sécurité
             </Link>
-            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-              ☰
+            <button
+              className="menu-toggle"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
             <ul className={menuOpen ? "nav-list open" : "nav-list"}>
               <li>
-                <NavLink exact="true" to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+                <NavLink end to="/" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Accueil</NavLink>
               </li>
               <li>
-                <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About Us</NavLink>
+                <NavLink to="/about" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>À propos</NavLink>
               </li>
               <li>
-                <NavLink to="/services" className={({ isActive }) => isActive ? "active" : ""}>Services</NavLink>
+                <NavLink to="/services" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Services</NavLink>
               </li>
               <li>
-                <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink>
+                <NavLink to="/contact" onClick={closeMenu} className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink>
               </li>
             </ul>
           </div>
         </nav>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+
+        <Footer />
       </div>
     </Router>
   );
