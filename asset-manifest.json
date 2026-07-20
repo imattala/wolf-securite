@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Security-Company-Website/static/css/main.baf23023.css",
+    "main.js": "/Security-Company-Website/static/js/main.dbbcac5c.js",
+    "static/js/453.f8bccb1e.chunk.js": "/Security-Company-Website/static/js/453.f8bccb1e.chunk.js",
+    "index.html": "/Security-Company-Website/index.html",
+    "main.baf23023.css.map": "/Security-Company-Website/static/css/main.baf23023.css.map",
+    "main.dbbcac5c.js.map": "/Security-Company-Website/static/js/main.dbbcac5c.js.map",
+    "453.f8bccb1e.chunk.js.map": "/Security-Company-Website/static/js/453.f8bccb1e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.baf23023.css",
+    "static/js/main.dbbcac5c.js"
+  ]
+}
