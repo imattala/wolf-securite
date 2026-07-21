@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import './About.css';
 import { FaAward, FaHandshake, FaShieldAlt } from 'react-icons/fa';
 
-import johnPhoto from './assets/member1.jpg';
-import janePhoto from './assets/member2.jpg';
-import michaelPhoto from './assets/member3.jpg';
+import defaultAvatar from './assets/default-avatar.svg';
 
 const values = [
   {
@@ -28,19 +26,19 @@ const values = [
 
 const team = [
   {
-    photo: johnPhoto,
+    photo: defaultAvatar,
     name: 'Faical ATTALA',
     role: 'Fondateur & Directeur Général',
     bio: "Faical a fondé Wolf Sécurité avec l'ambition d'offrir des services de sécurité de premier ordre aux entreprises. Fort de plus de 20 ans d'expérience dans le secteur, il dirige l'entreprise avec une vision forte et une exigence constante d'excellence.",
   },
   {
-    photo: janePhoto,
+    photo: defaultAvatar,
     name: 'Ibrahim ATTALA',
     role: 'Responsable des Opérations',
     bio: "Ibrahim veille au bon déroulement des opérations de sécurité au quotidien, supervise les équipes sur le terrain et coordonne les échanges avec les clients pour répondre au mieux à leurs besoins.",
   },
   {
-    photo: michaelPhoto,
+    photo: defaultAvatar,
     name: 'Amin BAHMANI',
     role: 'Expert en Sécurité',
     bio: "Fort d'une expérience dans les forces de l'ordre et la gestion de la sécurité, Amin est spécialiste de l'évaluation des risques et conçoit des stratégies de sécurité adaptées aux besoins spécifiques de chaque client.",
