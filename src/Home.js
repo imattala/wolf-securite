@@ -10,7 +10,34 @@ import {
   FaUserShield,
   FaBolt,
   FaArrowRight,
+  FaQuoteLeft,
+  FaStar,
 } from 'react-icons/fa';
+
+const stats = [
+  { value: '10+', label: "Années d'expérience" },
+  { value: '50+', label: 'Agents qualifiés' },
+  { value: '200+', label: 'Clients protégés' },
+  { value: '24/7', label: 'Disponibilité' },
+];
+
+const testimonials = [
+  {
+    quote: "Une équipe très professionnelle et réactive. Nos chantiers n'ont plus connu le moindre incident depuis que Wolf Sécurité assure la surveillance.",
+    name: 'Responsable de chantier',
+    role: 'Secteur BTP',
+  },
+  {
+    quote: "Ils ont sécurisé notre événement de A à Z, avec un vrai sens du service et du contact client. Nous les recommandons sans hésiter.",
+    name: 'Organisatrice d’événements',
+    role: 'Secteur événementiel',
+  },
+  {
+    quote: "Agents ponctuels, sérieux et à l'écoute. La tranquillité d'esprit qu'ils nous apportent au quotidien n'a pas de prix.",
+    name: 'Directeur des opérations',
+    role: 'Secteur tertiaire',
+  },
+];
 
 const Home = () => {
   return (
@@ -48,6 +75,17 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="stats">
+        <div className="container stats-grid">
+          {stats.map((stat) => (
+            <div className="stat-item" key={stat.label}>
+              <span className="stat-value">{stat.value}</span>
+              <span className="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="home-content">
         <div className="container">
           <span className="section-eyebrow">Nos domaines d'expertise</span>
@@ -79,6 +117,27 @@ const Home = () => {
             <Link to="/services" className="link-arrow">
               Voir tous nos services <FaArrowRight />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="testimonials">
+        <div className="container">
+          <span className="section-eyebrow">Ils nous font confiance</span>
+          <h2>Ce que disent nos clients</h2>
+
+          <div className="testimonial-cards">
+            {testimonials.map((testimonial) => (
+              <div className="testimonial-card" key={testimonial.name}>
+                <FaQuoteLeft className="testimonial-quote-icon" />
+                <div className="testimonial-stars">
+                  <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
+                </div>
+                <p className="testimonial-text">{testimonial.quote}</p>
+                <p className="testimonial-name">{testimonial.name}</p>
+                <p className="testimonial-role">{testimonial.role}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

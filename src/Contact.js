@@ -47,6 +47,16 @@ const Contact = () => {
               <p>24h/24 et 7j/7</p>
             </div>
           </div>
+
+          <div className="contact-map">
+            <iframe
+              title="Localisation Wolf Sécurité"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
     </div>

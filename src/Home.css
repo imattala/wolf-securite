@@ -78,6 +78,106 @@
   font-size: 1.4em;
 }
 
+/* Stats strip */
+.stats {
+  background: linear-gradient(120deg, var(--navy-950), var(--navy-800));
+  padding: 56px 24px;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.4em;
+  color: var(--gold-400);
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95em;
+}
+
+/* Testimonials */
+.testimonials {
+  text-align: center;
+  padding: 90px 0;
+  background-color: var(--surface);
+}
+
+.testimonials h2 {
+  font-size: 2.3em;
+  margin-bottom: 50px;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background-color: var(--bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 34px 30px;
+  width: 340px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-quote-icon {
+  color: var(--gold-500);
+  font-size: 1.4em;
+  margin-bottom: 14px;
+}
+
+.testimonial-stars {
+  color: var(--gold-500);
+  font-size: 0.85em;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
+.testimonial-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 2px;
+}
+
+.testimonial-role {
+  color: var(--text-muted);
+  font-size: 0.92em;
+}
+
 /* Content section */
 .home-content {
   text-align: center;
@@ -211,6 +311,15 @@
   }
 
   .service-card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .testimonials {
+    padding: 60px 0;
+  }
+
+  .testimonial-card {
     width: 100%;
     max-width: 420px;
   }
