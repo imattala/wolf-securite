@@ -1,0 +1,29 @@
+.sticky-call-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-call-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 300;
+    background-color: var(--gold-500);
+    color: var(--navy-950);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05em;
+    text-decoration: none;
+    padding: 14px 20px;
+    box-shadow: 0 -4px 16px rgba(15, 28, 46, 0.18);
+  }
+
+  .site {
+    padding-bottom: 54px;
+  }
+}

@@ -6,6 +6,7 @@ import About from './About';
 import Services from './Services';
 import Contact from './Contact';
 import Footer from './Footer';
+import StickyCallBar from './StickyCallBar';
 import './Nav.css';
 
 const ScrollToTop = () => {
@@ -85,6 +86,7 @@ const App = () => {
         </main>
 
         <Footer />
+        <StickyCallBar />
       </div>
     </Router>
   );
